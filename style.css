@@ -1,0 +1,106 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+section {
+   margin-top: 5em;
+}
+
+h1 {
+   text-align: center;
+   font-size: 3.5em;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5em;
+}
+
+.container .boxes {
+   border: 1px solid #000;
+   margin: 1em;
+   width: 100%;
+   background-color: rgb(55, 66, 63);
+
+}
+
+.boxes>div::after {
+   display: block;
+   content: '';
+   clear: both;
+
+}
+
+.boxes .title {
+   border: 1px solid #000;
+   border-top: none;
+   border-right: none;
+   float: right;
+   font-size: 2.5em;
+   padding: 1em;
+   font-family: fantasy;
+   font-weight: 400;
+}
+
+
+
+.boxes .text {
+   font-size: 2em;
+   padding: 2em;
+   font-family: cursive;
+}
+
+#htmltitle {
+   background-color: rosybrown;
+}
+
+#csstitle {
+   background-color: rgb(185, 55, 55);
+}
+
+#jstitle {
+   background-color: rgb(167, 108, 32);
+}
+
+
+#box1 {
+   grid-area: box1;
+}
+
+#box2 {
+   grid-area: box2;
+}
+
+#box3 {
+   grid-area: box3;
+}
+
+@media (max-width:991px) and (min-width: 768px) {
+   .container {
+      display: grid;
+      gap: 2em;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "box1 box2"
+         "box3 box3";
+      font-size: 60% !important;
+   }
+}
+
+@media (max-width:767px) {
+   .container {
+      display: grid;
+      gap: 2em;
+      grid-template-areas: "box1 box1"
+         "box2 box2 "
+         "box3 box3";
+   }
+}
